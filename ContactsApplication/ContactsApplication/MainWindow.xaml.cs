@@ -40,12 +40,20 @@ namespace ContactsApplication
         // read information from the table
         void ReadData()
         {
+            List<Contact> contacts;
             using(SQLite.SQLiteConnection connect = new SQLite.SQLiteConnection(App.databasePath))
             {
                 connect.CreateTable<Contact>();
                 // add method which gives me a list of contacts
-                var contacts = connect.Table<Contact>().ToList();
+                contacts = connect.Table<Contact>().ToList();
             }
+
+            // create new object
+            if(contacts != null)
+            {
+                contactsList.ItemsSource = contacts;
+            }
+
         }
 
     }
