@@ -20,7 +20,7 @@
                      Margin="0,0,0,10"/>
             <Button Content="✔"
                     x:Name="saveButton"
-                    Click="saveButton_Click"/>
+                    Click="SaveButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>
