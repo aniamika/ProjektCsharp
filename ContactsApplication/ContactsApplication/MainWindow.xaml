@@ -5,11 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="350">
-    <StackPanel Margin="10">
-        <Button Content="✚"
-                Click="Button_Click"/>
-        <ListView x:Name="contactsList"
-                  Margin="0 10"/>
-    </StackPanel>
+        Title="MainWindow" Height="450" Width="380"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="10" Grid.RowSpan="2" Margin="0,0,0,-0.4">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#7beef6" Offset="0.0"/>
+                        <GradientStop Color="#7f40cf" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <StackPanel Margin="10">
+                <TextBlock Text="Adress Book"
+                           Margin="20"
+                           FontWeight="Light"
+                           FontFamily="helvetica"
+                           FontSize="22"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                <Button Content="✚"
+                        Click="Button_Click"/>
+                <ListView x:Name="contactsList"
+                          Margin="0 10"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
 </Window>

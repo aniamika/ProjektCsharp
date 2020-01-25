@@ -48,7 +48,7 @@ namespace ContactsApplication
                 contacts = connect.Table<Contact>().ToList();
             }
 
-            // create new object
+            // create new object - add new element to items 
             if(contacts != null)
             {
                 contactsList.ItemsSource = contacts;
