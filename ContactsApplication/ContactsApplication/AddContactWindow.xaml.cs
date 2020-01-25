@@ -26,15 +26,15 @@ namespace ContactsApplication
             InitializeComponent();
         }
 
-        private void saveButton_Click(object sender, RoutedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             // Save contact
             // Create new contact
             Contact contact = new Contact()
             {
-                Name = nameTextBox.Text,
-                Email = emailTextBox.Text,
-                Phone = phoneNumberTextBox.Text
+                Name = name.Text,
+                Email = email.Text,
+                Phone = phoneNumber.Text
             };
 
             string databaseName = "Contacts.db";
