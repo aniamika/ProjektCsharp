@@ -37,12 +37,8 @@ namespace ContactsApplication
                 Phone = phoneNumber.Text
             };
 
-            string databaseName = "Contacts.db";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string databasePath = System.IO.Path.Combine(folderPath, databaseName);
-
-            // connect to database
-            using (SQLiteConnection connection = new SQLiteConnection(databasePath))
+            // connect to database by using statement
+            using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
             {
                 // create table with contact 
                 // if table exist - nothing is going to happened
