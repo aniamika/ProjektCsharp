@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ContactsApplication.Classes
 {
+    // SQlite attributes
     public class Contact
     {
-        // SQlite attributes
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
