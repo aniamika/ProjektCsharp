@@ -42,16 +42,17 @@ namespace ContactsApplication
             string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
             // connect to database
-            SQLiteConnection connection = new SQLiteConnection(databasePath);
-            
-            // create table with contact 
-            // if table exist - nothing is going to happened
-            connection.CreateTable<Contact>();
-
-            // insert into a table
-            connection.Insert(contact);
-
+            using (SQLiteConnection connection = new SQLiteConnection(databasePath))
+            {
+                // create table with contact 
+                // if table exist - nothing is going to happened
+                connection.CreateTable<Contact>();
+                // insert into a table - passed the object that need to be insert into table
+                connection.Insert(contact);
+            };
+    
             // automatically close after click on save button (Close method is inherited from the Window Class)
+            // close the connection
             Close();
         }
     }
