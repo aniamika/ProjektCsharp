@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsApplication"
+        xmlns:iconPacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.FontAwesome"
+        xmlns:iconPacks1="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="380"
         AllowsTransparency="True" Background="Transparent"
@@ -14,7 +16,8 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Border CornerRadius="10" Grid.RowSpan="2" Margin="0,0,0,-0.4">
+
+            <Border CornerRadius="10" Grid.RowSpan="2" Margin="0,0,0,-0.4" RenderTransformOrigin="0.49,1.012">
                 <Border.Background>
                     <LinearGradientBrush>
                         <GradientStop Color="#7beef6" Offset="0.0"/>
@@ -23,19 +26,65 @@
                 </Border.Background>
             </Border>
 
-            <StackPanel Margin="10">
+            <StackPanel Margin="10"
+                        VerticalAlignment="Center">
+                <iconPacks:PackIconFontAwesome Width="60"
+                                               Height="60"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Kind="AddressBookRegular"
+                                               Foreground="White" Margin="133,0"/>
                 <TextBlock Text="Adress Book"
-                           Margin="20"
+                           Margin="7"
                            FontWeight="Light"
                            FontFamily="helvetica"
                            FontSize="22"
                            Foreground="White"
                            HorizontalAlignment="Center"/>
-                <Button Content="✚"
-                        Click="Button_Click"/>
-                <ListView x:Name="contactsList"
-                          Margin="0 10"/>
             </StackPanel>
+
+
+            <StackPanel HorizontalAlignment="Right"
+                        Margin="20">
+                <Button Content="✚"
+                        Click="Button_Click"
+                        Foreground="Black"
+                        BorderBrush="Transparent"
+                        Height="40"
+                        Width="40">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Ellipse Fill="White"/>
+                                <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+                <StackPanel Margin="10" 
+                        Orientation="Horizontal"
+                        Grid.Row="1">
+                    <ListView x:Name="contactsList"
+                                FontWeight="Light"
+                                FontFamily="Helvetica"
+                                FontSize="18"
+                                Foreground="White"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Background="Transparent"
+                                BorderBrush="Transparent"/>
+                </StackPanel>
+                <!--<Border Width="250"
+                    Height="2"
+                    Background="White"
+                    Opacity="0.5"/>-->
+            </StackPanel>
+
+
         </Grid>
     </Grid>
 </Window>
