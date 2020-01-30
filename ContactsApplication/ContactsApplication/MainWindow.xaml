@@ -7,14 +7,18 @@
         xmlns:iconPacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.FontAwesome"
         xmlns:iconPacks1="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="380"
+        Title="MainWindow" Height="500" Width="380"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize">
     <Grid>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="300"/>
             </Grid.RowDefinitions>
 
             <Border CornerRadius="10" Grid.RowSpan="2" Margin="0,0,0,-0.4" RenderTransformOrigin="0.49,1.012">
@@ -26,7 +30,7 @@
                 </Border.Background>
             </Border>
 
-            <StackPanel Margin="10"
+            <StackPanel Margin="20"
                         VerticalAlignment="Center">
                 <iconPacks:PackIconFontAwesome Width="60"
                                                Height="60"
@@ -42,7 +46,6 @@
                            Foreground="White"
                            HorizontalAlignment="Center"/>
             </StackPanel>
-
 
             <StackPanel HorizontalAlignment="Right"
                         Margin="20">
@@ -61,29 +64,52 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-
             </StackPanel>
 
             <StackPanel Grid.Row="1">
-                <StackPanel Margin="10" 
-                        Orientation="Horizontal"
-                        Grid.Row="1">
+                <StackPanel Margin="20 0 20 20" 
+                        Orientation="Horizontal">
                     <ListView x:Name="contactsList"
                                 FontWeight="Light"
                                 FontFamily="Helvetica"
-                                FontSize="18"
-                                Foreground="White"
+                                FontSize="16"
+                                Foreground="Black"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Background="Transparent"
-                                BorderBrush="Transparent"/>
+                                BorderBrush="Transparent"
+                                Height="280"
+                                Width="340">
+                        
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="GhostWhite"
+                                        CornerRadius="10 10 10 10"
+                                        BorderThickness="1">
+                                    <StackPanel Width="300"
+                                                Margin="10">
+                                        <StackPanel.Background>
+                                            <SolidColorBrush Color="GhostWhite"/>
+                                        </StackPanel.Background>
+                                        <TextBlock Text="{Binding Name}" 
+                                                   TextWrapping="Wrap"
+                                                   FontSize="20"/>
+                                        <TextBlock Text="{Binding Email}" 
+                                                   TextWrapping="Wrap"
+                                                   FontSize="15"
+                                                   Foreground="DodgerBlue"/>
+                                        <TextBlock Text="{Binding Phone}" 
+                                                   TextWrapping="Wrap"
+                                                   FontSize="15"
+                                                   FontStyle="Italic"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        
+                    </ListView>
                 </StackPanel>
-                <!--<Border Width="250"
-                    Height="2"
-                    Background="White"
-                    Opacity="0.5"/>-->
             </StackPanel>
-
 
         </Grid>
     </Grid>
