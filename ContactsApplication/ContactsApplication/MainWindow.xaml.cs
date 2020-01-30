@@ -46,8 +46,8 @@ namespace ContactsApplication
             using(SQLite.SQLiteConnection connect = new SQLite.SQLiteConnection(App.databasePath))
             {
                 connect.CreateTable<Contact>();
-                // add method which gives me a list of contacts
-                contacts = connect.Table<Contact>().ToList();
+                // add method which gives me a list of contacts and order them
+                contacts = connect.Table<Contact>().ToList().OrderBy(c => c.Name).ToList();
             }
 
             // create new object - add new element to items 
