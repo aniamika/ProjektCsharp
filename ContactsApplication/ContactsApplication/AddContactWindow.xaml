@@ -28,12 +28,93 @@
 
         <StackPanel Grid.Row="2"
                     Margin="10,10,10.4,10">
-            <TextBox x:Name="name"
-                     Margin="0,0,0,10"/>
-            <TextBox x:Name="email"
-                     Margin="0,0,0,10"/>
-            <TextBox x:Name="phoneNumber"
-                     Margin="0,0,0,10"/>
+            <Border Background="GhostWhite"
+                    CornerRadius="20 0 20 0"
+                    BorderThickness="1"
+                    Margin="10 5">
+                <TextBox x:Name="name"
+                         Margin="20"
+                         Background="Transparent"
+                         BorderBrush="Transparent"
+                         BorderThickness="0"
+                         TextWrapping="Wrap">
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                          Direction="330"
+                          Color="Black"
+                          Opacity="0.5"
+                          BlurRadius="4"
+                           />
+                    </TextBox.Effect>
+                    <TextBox.FocusVisualStyle>
+                        <Style>
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate/>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TextBox.FocusVisualStyle>
+                </TextBox>
+            </Border>
+            <Border Background="GhostWhite"
+                    CornerRadius="20 0 20 0"
+                    BorderThickness="1"
+                    Margin="10 5">
+                <TextBox x:Name="email"
+                         Margin="20"
+                         Background="Transparent"
+                         BorderBrush="Transparent"
+                         BorderThickness="0"
+                         TextWrapping="Wrap">
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                          Direction="330"
+                          Color="Black"
+                          Opacity="0.5"
+                          BlurRadius="4"
+                           />
+                    </TextBox.Effect>
+                    <TextBox.FocusVisualStyle>
+                        <Style>
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate/>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TextBox.FocusVisualStyle>
+                </TextBox>
+            </Border>
+            <Border Background="GhostWhite"
+                    CornerRadius="20 0 20 0"
+                    BorderThickness="1"
+                    Margin="10 5">
+                <TextBox x:Name="phoneNumber"
+                         Margin="20"
+                         Background="Transparent"
+                         BorderBrush="Transparent"
+                         BorderThickness="0"
+                         TextWrapping="Wrap">
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                          Direction="330"
+                          Color="Black"
+                          Opacity="0.5"
+                          BlurRadius="4"
+                           />
+                    </TextBox.Effect>
+                    <TextBox.FocusVisualStyle>
+                        <Style>
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate/>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TextBox.FocusVisualStyle>
+                </TextBox>
+            </Border>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Right"

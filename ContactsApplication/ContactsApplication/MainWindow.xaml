@@ -7,21 +7,22 @@
         xmlns:iconPacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.FontAwesome"
         xmlns:iconPacks1="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="380"
+        Title="MainWindow" Height="499.6" Width="380"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize">
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="251*"/>
             </Grid.ColumnDefinitions>
-            
+
             <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
-                <RowDefinition Height="300"/>
+                <RowDefinition Height="170"/>
+                <RowDefinition Height="324.8"/>
             </Grid.RowDefinitions>
 
-            <Border CornerRadius="10" Grid.RowSpan="2" Margin="0,0,0,-0.4" RenderTransformOrigin="0.49,1.012">
+            <Border CornerRadius="10" Grid.RowSpan="3" RenderTransformOrigin="0.49,1.012" Grid.ColumnSpan="2">
                 <Border.Background>
                     <LinearGradientBrush>
                         <GradientStop Color="#7beef6" Offset="0.0"/>
@@ -30,8 +31,8 @@
                 </Border.Background>
             </Border>
 
-            <StackPanel Margin="20"
-                        VerticalAlignment="Center">
+            <StackPanel Margin="20,0,20,9.2"
+                        VerticalAlignment="Bottom" Height="150" Grid.ColumnSpan="2">
                 <iconPacks:PackIconFontAwesome Width="60"
                                                Height="60"
                                                HorizontalAlignment="Center"
@@ -39,16 +40,45 @@
                                                Kind="AddressBookRegular"
                                                Foreground="White" Margin="133,0"/>
                 <TextBlock Text="Adress Book"
-                           Margin="7"
+                           Margin="5"
                            FontWeight="Light"
                            FontFamily="helvetica"
                            FontSize="22"
                            Foreground="White"
                            HorizontalAlignment="Center"/>
+                <Border Background="GhostWhite"
+                    CornerRadius="25 25 0 0"
+                    BorderThickness="1"
+                    Margin="0,5,10,5" Height="49" HorizontalAlignment="Right" Width="320">
+                    <TextBox x:Name="email"
+                             TextChanged="TextBox_TextChanged"
+                             Margin="15"
+                             Background="Transparent"
+                             BorderBrush="Transparent"
+                             BorderThickness="0"
+                             TextWrapping="Wrap">
+                        <TextBox.Effect>
+                            <DropShadowEffect ShadowDepth="4"
+                                                Direction="330"
+                                                Color="Black"
+                                                Opacity="0.5"
+                                                BlurRadius="4"/>
+                        </TextBox.Effect>
+                        <TextBox.FocusVisualStyle>
+                            <Style>
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TextBox.FocusVisualStyle>
+                    </TextBox>
+                </Border>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Right"
-                        Margin="20">
+                        Margin="0,20,20,5.2" Width="40" Grid.Column="1">
                 <Button Content="✚"
                         Click="Button_Click"
                         Foreground="Black"
@@ -66,21 +96,20 @@
                 </Button>
             </StackPanel>
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="2" Margin="0,1.8,0,0" Grid.ColumnSpan="2">
                 <StackPanel Margin="20 0 20 20" 
-                        Orientation="Horizontal">
+                        Orientation="Horizontal" Height="310">
                     <ListView x:Name="contactsList"
                                 FontWeight="Light"
                                 FontFamily="Helvetica"
                                 FontSize="16"
                                 Foreground="Black"
                                 HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
+                                VerticalAlignment="Bottom"
                                 Background="Transparent"
                                 BorderBrush="Transparent"
-                                Height="280"
-                                Width="340">
-                        
+                                Height="310"
+                                Width="340" Margin="0,0,0,-0.4">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Border Background="GhostWhite"
@@ -106,7 +135,7 @@
                                 </Border>
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                        
+
                     </ListView>
                 </StackPanel>
             </StackPanel>

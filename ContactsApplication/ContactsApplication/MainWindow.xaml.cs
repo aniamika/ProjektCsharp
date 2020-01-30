@@ -21,10 +21,12 @@ namespace ContactsApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Contact> contacts;
+
         public MainWindow()
         {
             InitializeComponent();
-
+            contacts = new List<Contact>();
             ReadData();
         }
 
@@ -40,7 +42,7 @@ namespace ContactsApplication
         // read information from the table
         void ReadData()
         {
-            List<Contact> contacts;
+
             using(SQLite.SQLiteConnection connect = new SQLite.SQLiteConnection(App.databasePath))
             {
                 connect.CreateTable<Contact>();
@@ -56,5 +58,14 @@ namespace ContactsApplication
 
         }
 
+        // check if the text changed
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox searchTextBox = sender as TextBox;
+            // where method allowes to filtered - make them 2 uppercase to compare the same
+            var listFiltered = contacts.Where(c => c.Name.ToUpper().Contains(searchTextBox.Text.ToUpper())).ToList();
+            contactsList.ItemsSource = listFiltered;
+
+        }
     }
 }
